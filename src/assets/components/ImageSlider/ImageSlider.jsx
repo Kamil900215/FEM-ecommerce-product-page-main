@@ -1,32 +1,32 @@
 import React, { useState } from 'react'
-import {SliderData} from './SliderData'
 import './imageSlider.css'
 import arrowLeft from '../../../../images/icon-previous.svg'
 import arrowrRight from '../../../../images/icon-next.svg'
+import SliderControls from './SliderControls'
+
 
 function ImageSlider() {
-
-    const [currentIndex, setCurrentIndex] = useState(0)
- 
-    const nextImage = () => {
-        const isLastImage = currentIndex ===  SliderData.length - 1
-        const newIndex = isLastImage ? 0 : currentIndex + 1
-        setCurrentIndex(newIndex)
-    }
-    const prevImage = () => {
-        const isFirstImage = currentIndex === 0 
-        const newIndex = isFirstImage ? SliderData.length - 1 : currentIndex - 1
-        setCurrentIndex(newIndex)
-    }
-
+   
+    const {nextImage, prevImage, currentIndex, SliderData, handleTouchStart, handleTouchMove, setCurrentIndex} = SliderControls()
   return (
     <>
         <div className='sliderContainer'>
             <div className='sliderImage'
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
             style={{ 
-                backgroundImage: `url(${SliderData  [currentIndex].url})`, 
+                backgroundImage: `url(${SliderData[currentIndex].url})`, 
             }}
             ></div>
+            <div className="smallImages">               
+                {SliderData.map((image, index) => (
+                  <img key={image.id} 
+                  style={{width:`calc(100%/${SliderData.length})`}} 
+                  src={image.url}
+                  onClick={(e) => setCurrentIndex(index)}
+                  />
+                ))}
+            </div>
             <div className="arrows">
                 <img className='arrow' src={arrowLeft} alt="" 
                 onClick={prevImage}
