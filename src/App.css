@@ -1,5 +1,8 @@
 :root{
     --ff-base: 'Kumbh Sans', sans-serif;
+    --fw-400: 400;
+    --fw-700: 700;
+
     --orange: hsl(26, 100%, 55%);
     --pale-range: hsl(25, 100%, 94%);
 

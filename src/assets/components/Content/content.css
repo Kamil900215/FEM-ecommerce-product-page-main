@@ -1,0 +1,22 @@
+.Content{
+    width: 90%;
+    margin: 0 auto;
+}
+.companyName{
+    padding: .7rem 0;
+    font-size: .7rem;
+    letter-spacing: 0.2rem;
+    font-weight: var(--fw-700);
+    color: var(--orange);
+    text-transform: uppercase;
+}
+.itemTitle{
+    line-height: 2rem;
+    font-size: 1.6rem;
+}
+.itemDescr{
+    line-height: 1.2rem;
+    font-size: 0.8rem;
+    color: var(--Dark-grayish-blue);
+    padding: 1rem 0;
+}

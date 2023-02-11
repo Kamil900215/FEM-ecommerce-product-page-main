@@ -27,7 +27,7 @@ const SliderControls = () => {
         diff > 5 ? nextImage() : prevImage()
         setTouchPosition(null)
     }
- return {prevImage, nextImage, currentIndex,setCurrentIndex,SliderData, handleTouchStart, handleTouchMove}
+ return {prevImage, nextImage, currentIndex, setCurrentIndex, SliderData, handleTouchStart, handleTouchMove}
 }
 
 export default SliderControls;
